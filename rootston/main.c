@@ -11,8 +11,22 @@
 #include <wlr/util/log.h>
 #include "rootston/config.h"
 #include "rootston/server.h"
+#include <wlcs/display_server.h>
 
 struct roots_server server = { 0 };
+
+struct WlcsDisplayServer* wlcs_create_server(int argc, char const** argv) {
+	return NULL;
+}
+
+void wlcs_destroy_server(struct WlcsDisplayServer* server) {
+}
+
+WlcsServerIntegration const wlcs_server_integration = {
+    1,
+    &wlcs_create_server,
+    &wlcs_destroy_server,
+};
 
 int main(int argc, char **argv) {
 	wlr_log_init(WLR_DEBUG, NULL);

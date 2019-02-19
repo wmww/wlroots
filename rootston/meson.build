@@ -28,3 +28,10 @@ executable(
 	dependencies: [wlroots, wlr_protos, pixman],
 	build_by_default: get_option('rootston'),
 )
+
+library(
+	'rootston_wlcs',
+	sources,
+	dependencies: [wlroots, wlr_protos, pixman],
+	build_by_default: get_option('rootston'),
+)
